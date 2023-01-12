@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.22)  11 JAN 2023 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.22)  12 JAN 2023 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -346,29 +346,29 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Info: Redefining \celsius on input line 92.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Info: Redefining \celsius on input line 84.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 84.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 92.
-Package gensymb Info: Using \Omega for \ohm on input line 92.
+LaTeX Info: Redefining \ohm on input line 84.
+Package gensymb Info: Using \Omega for \ohm on input line 84.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -466,86 +466,82 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: chapters/figs/pmf.png Graphic file (type png)
 <use chapters/figs/pmf.png>
 Package pdftex.def Info: chapters/figs/pmf.png  used on input line 164.
-(pdftex.def)             Requested size: 542.02501pt x 406.53891pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3])
-[4 <./chapters/figs/pmf.png>]
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+)
+[3 <./chapters/figs/pmf.png>]
 Chapter 2.
 (./chapter2/random.tex
-<chapter2/figs/uni_cdf.pdf, id=40, 462.52798pt x 346.89601pt>
+<chapter2/figs/uni_cdf.pdf, id=38, 462.52798pt x 346.89601pt>
 File: chapter2/figs/uni_cdf.pdf Graphic file (type pdf)
 <use chapter2/figs/uni_cdf.pdf>
 Package pdftex.def Info: chapter2/figs/uni_cdf.pdf  used on input line 25.
-(pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
+(pdftex.def)             Requested size: 370.02287pt x 277.51718pt.
+ [4
+
+ <./chapter2/figs/uni_cdf.pdf>] [5]
+<chapter2/figs/gauss_cdf.pdf, id=69, 462.52798pt x 346.89601pt>
+File: chapter2/figs/gauss_cdf.pdf Graphic file (type pdf)
+<use chapter2/figs/gauss_cdf.pdf>
+Package pdftex.def Info: chapter2/figs/gauss_cdf.pdf  used on input line 178.
+(pdftex.def)             Requested size: 370.02287pt x 277.51718pt.
+ [6]
+<chapter2/figs/gauss_pdf.pdf, id=73, 462.52798pt x 346.89601pt>
+File: chapter2/figs/gauss_pdf.pdf Graphic file (type pdf)
+<use chapter2/figs/gauss_pdf.pdf>
+Package pdftex.def Info: chapter2/figs/gauss_pdf.pdf  used on input line 222.
+(pdftex.def)             Requested size: 370.02287pt x 277.51718pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7 <./chapter2/figs/gauss_cdf.pdf>] [8 <./chapter2/figs/gauss_pdf.pdf>]
+<chapter2/figs/log.pdf, id=142, 462.52798pt x 346.89601pt>
+File: chapter2/figs/log.pdf Graphic file (type pdf)
+<use chapter2/figs/log.pdf>
+Package pdftex.def Info: chapter2/figs/log.pdf  used on input line 291.
+(pdftex.def)             Requested size: 323.76736pt x 242.82555pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5
-
-]
-[6 <./chapter2/figs/uni_cdf.pdf>]
-<chapter2/figs/gauss_cdf.png, id=71, 462.528pt x 346.896pt>
-File: chapter2/figs/gauss_cdf.png Graphic file (type png)
-<use chapter2/figs/gauss_cdf.png>
-Package pdftex.def Info: chapter2/figs/gauss_cdf.png  used on input line 129.
-(pdftex.def)             Requested size: 542.02501pt x 406.53891pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7]
-<chapter2/figs/gauss_pdf.pdf, id=75, 462.52798pt x 346.89601pt>
-File: chapter2/figs/gauss_pdf.pdf Graphic file (type pdf)
-<use chapter2/figs/gauss_pdf.pdf>
-Package pdftex.def Info: chapter2/figs/gauss_pdf.pdf  used on input line 158.
-(pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./chapter2/figs/gauss_cdf.png>]
-Underfull \vbox (badness 1424) has occurred while \output is active []
-
- [9 <./chapter2/figs/gauss_pdf.pdf>]
-<chapter2/figs/log.pdf, id=121, 462.52798pt x 346.89601pt>
-File: chapter2/figs/log.pdf Graphic file (type pdf)
-<use chapter2/figs/log.pdf>
-Package pdftex.def Info: chapter2/figs/log.pdf  used on input line 226.
+ [9 <./chapter2/figs/log.pdf>]
+<chapter2/figs/triangle_cdf.pdf, id=183, 462.52798pt x 346.89601pt>
+File: chapter2/figs/triangle_cdf.pdf Graphic file (type pdf)
+<use chapter2/figs/triangle_cdf.pdf>
+Package pdftex.def Info: chapter2/figs/triangle_cdf.pdf  used on input line 332
+.
 (pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-[11 <./chapter2/figs/log.pdf>]
-<chapter2/figs/triangle_cdf.pdf, id=167, 462.52798pt x 346.89601pt>
-File: chapter2/figs/triangle_cdf.pdf Graphic file (type pdf)
-<use chapter2/figs/triangle_cdf.pdf>
-Package pdftex.def Info: chapter2/figs/triangle_cdf.pdf  used on input line 267
-.
-(pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
-<chapter2/figs/triangle_pdf.pdf, id=168, 462.52798pt x 346.89601pt>
+<chapter2/figs/triangle_pdf.pdf, id=188, 462.52798pt x 346.89601pt>
 File: chapter2/figs/triangle_pdf.pdf Graphic file (type pdf)
 <use chapter2/figs/triangle_pdf.pdf>
-Package pdftex.def Info: chapter2/figs/triangle_pdf.pdf  used on input line 278
+Package pdftex.def Info: chapter2/figs/triangle_pdf.pdf  used on input line 343
 .
 (pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./chapter2/figs/triangle_cdf.pdf>]
+ [11 <./chapter2/figs/triangle_cdf.pdf>]
+
+LaTeX Warning: Reference `eq:uni_pdf' on page 12 undefined on input line 352.
+
+
+LaTeX Warning: Reference `eq:pdf_to_cdf' on page 12 undefined on input line 363
+.
+
+
 Underfull \vbox (badness 1163) has occurred while \output is active []
 
- [13 <./chapter2/figs/triangle_pdf.pdf>]) [14]
+ [12 <./chapter2/figs/triangle_pdf.pdf>]) [13]
 Chapter 3.
 (./chapter3/bpsk.tex
-<chapter3/figs/bpsk_scatter.pdf, id=253, 462.52798pt x 346.89601pt>
+<chapter3/figs/bpsk_scatter.pdf, id=274, 462.52798pt x 346.89601pt>
 File: chapter3/figs/bpsk_scatter.pdf Graphic file (type pdf)
 <use chapter3/figs/bpsk_scatter.pdf>
 Package pdftex.def Info: chapter3/figs/bpsk_scatter.pdf  used on input line 25.
@@ -554,13 +550,13 @@ Package pdftex.def Info: chapter3/figs/bpsk_scatter.pdf  used on input line 25.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
+ [14
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./chapter3/figs/bpsk_scatter.pdf>]
-<chapter3/figs/bpsk_pe_snr.pdf, id=281, 462.52798pt x 346.89601pt>
+ [15 <./chapter3/figs/bpsk_scatter.pdf>]
+<chapter3/figs/bpsk_pe_snr.pdf, id=302, 462.52798pt x 346.89601pt>
 File: chapter3/figs/bpsk_pe_snr.pdf Graphic file (type pdf)
 <use chapter3/figs/bpsk_pe_snr.pdf>
 Package pdftex.def Info: chapter3/figs/bpsk_pe_snr.pdf  used on input line 96.
@@ -568,18 +564,18 @@ Package pdftex.def Info: chapter3/figs/bpsk_pe_snr.pdf  used on input line 96.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./chapter3/figs/bpsk_pe_snr.pdf>]
+ [17 <./chapter3/figs/bpsk_pe_snr.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
+ [18]
 Underfull \hbox (badness 10000) in paragraph at lines 165--168
 
  []
 
-<chapter3/figs/bpsk_map_density.pdf, id=333, 462.52798pt x 346.89601pt>
+<chapter3/figs/bpsk_map_density.pdf, id=354, 462.52798pt x 346.89601pt>
 File: chapter3/figs/bpsk_map_density.pdf Graphic file (type pdf)
 <use chapter3/figs/bpsk_map_density.pdf>
 Package pdftex.def Info: chapter3/figs/bpsk_map_density.pdf  used on input line
@@ -588,16 +584,16 @@ Package pdftex.def Info: chapter3/figs/bpsk_map_density.pdf  used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20])
-[21 <./chapter3/figs/bpsk_map_density.pdf>]
+ [19])
+[20 <./chapter3/figs/bpsk_map_density.pdf>]
 Chapter 4.
 (./chapter4/trv.tex
-<chapter4/figs/chisq_cdf.pdf, id=375, 462.52798pt x 346.89601pt>
+<chapter4/figs/chisq_cdf.pdf, id=396, 462.52798pt x 346.89601pt>
 File: chapter4/figs/chisq_cdf.pdf Graphic file (type pdf)
 <use chapter4/figs/chisq_cdf.pdf>
 Package pdftex.def Info: chapter4/figs/chisq_cdf.pdf  used on input line 15.
 (pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
-<chapter4/figs/chisq_pdf.pdf, id=376, 462.52798pt x 346.89601pt>
+<chapter4/figs/chisq_pdf.pdf, id=397, 462.52798pt x 346.89601pt>
 File: chapter4/figs/chisq_pdf.pdf Graphic file (type pdf)
 <use chapter4/figs/chisq_pdf.pdf>
 Package pdftex.def Info: chapter4/figs/chisq_pdf.pdf  used on input line 21.
@@ -605,16 +601,20 @@ Package pdftex.def Info: chapter4/figs/chisq_pdf.pdf  used on input line 21.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22
+ [21
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <./chapter4/figs/chisq_cdf.pdf>]
+ [22 <./chapter4/figs/chisq_cdf.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24 <./chapter4/figs/chisq_pdf.pdf>]
-<chapter4/figs/rayleigh_cdf.pdf, id=459, 462.52798pt x 346.89601pt>
+ [23 <./chapter4/figs/chisq_pdf.pdf>]
+
+LaTeX Warning: Reference `eq:pdf_to_cdf' on page 24 undefined on input line 74.
+
+
+<chapter4/figs/rayleigh_cdf.pdf, id=480, 462.52798pt x 346.89601pt>
 File: chapter4/figs/rayleigh_cdf.pdf Graphic file (type pdf)
 <use chapter4/figs/rayleigh_cdf.pdf>
 Package pdftex.def Info: chapter4/figs/rayleigh_cdf.pdf  used on input line 108
@@ -628,14 +628,14 @@ Package pdftex.def Info: chapter4/figs/rayleigh_cdf.pdf  used on input line 114
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
+ [24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26 <./chapter4/figs/rayleigh_cdf.pdf>]
+ [25 <./chapter4/figs/rayleigh_cdf.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
-<chapter4/figs/prob_error.pdf, id=506, 462.52798pt x 346.89601pt>
+ [26]
+<chapter4/figs/prob_error.pdf, id=527, 462.52798pt x 346.89601pt>
 File: chapter4/figs/prob_error.pdf Graphic file (type pdf)
 <use chapter4/figs/prob_error.pdf>
 Package pdftex.def Info: chapter4/figs/prob_error.pdf  used on input line 203.
@@ -643,11 +643,11 @@ Package pdftex.def Info: chapter4/figs/prob_error.pdf  used on input line 203.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28])
-[29 <./chapter4/figs/prob_error.pdf>]
+ [27])
+[28 <./chapter4/figs/prob_error.pdf>]
 Chapter 5.
 (./chapter5/brv.tex
-<chapter5/figs/biv_scatter.pdf, id=550, 462.52798pt x 346.89601pt>
+<chapter5/figs/biv_scatter.pdf, id=570, 462.52798pt x 346.89601pt>
 File: chapter5/figs/biv_scatter.pdf Graphic file (type pdf)
 <use chapter5/figs/biv_scatter.pdf>
 Package pdftex.def Info: chapter5/figs/biv_scatter.pdf  used on input line 49.
@@ -655,53 +655,60 @@ Package pdftex.def Info: chapter5/figs/biv_scatter.pdf  used on input line 49.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30
+ [29
 
 ]
 Underfull \vbox (badness 4144) has occurred while \output is active []
 
- [31 <./chapter5/figs/biv_scatter.pdf>]
+ [30 <./chapter5/figs/biv_scatter.pdf>]
 Underfull \vbox (badness 2856) has occurred while \output is active []
 
- [32]
-<chapter5/figs/biv_pe_vs_snr.pdf, id=584, 462.52798pt x 346.89601pt>
+ [31]
+<chapter5/figs/biv_pe_vs_snr.pdf, id=605, 462.52798pt x 346.89601pt>
 File: chapter5/figs/biv_pe_vs_snr.pdf Graphic file (type pdf)
 <use chapter5/figs/biv_pe_vs_snr.pdf>
 Package pdftex.def Info: chapter5/figs/biv_pe_vs_snr.pdf  used on input line 13
 9.
 (pdftex.def)             Requested size: 542.02501pt x 406.53893pt.
 )
-[33 <./chapter5/figs/biv_pe_vs_snr.pdf>] (./main.aux) ) 
+[32 <./chapter5/figs/biv_pe_vs_snr.pdf>] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8792 strings out of 478287
- 138703 string characters out of 5849289
- 465850 words of memory out of 5000000
+ 8793 strings out of 478287
+ 138733 string characters out of 5849289
+ 600814 words of memory out of 5000000
  26854 multiletter control sequences out of 15000+600000
- 478912 words of font info for 63 fonts, out of 8000000 for 9000
+ 479080 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,15n,63p,428b,1756s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 476689 bytes).
+ 55i,17n,63p,428b,1769s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (34 pages, 483653 bytes).
 PDF statistics:
- 706 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
+ 731 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

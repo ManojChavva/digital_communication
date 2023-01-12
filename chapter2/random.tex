@@ -22,29 +22,29 @@ chapter2/codes/cdf_plot.py
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/uni_cdf.pdf}
+\includegraphics[scale=0.8]{chapter2/figs/uni_cdf.pdf}
 \caption{The CDF of $U$}
 \label{fig:uni_cdf}
 \end{figure}
 \item
 Find a  theoretical expression for $F_{U}(x)$.\\
 \solution
-\begin{align} 
-F_{U}(x) = \int_{-\infty}^{x} f_{U}(x)\,dx
-\label{eq:pdf_to_cdf}
-\end{align}
-For the uniform random variable $U$, $f_{U}(x)$ is given by  
-\begin{align}
-	f_U(x) &= 
-	\begin{cases}
-	1 &  0 \le x \le  1
-	\\
-	0 & elsewhere
-	\\
-	\end{cases}
-	\label{eq:uni_pdf}
-\end{align}
-Substituting \eqref{eq:uni_pdf} in \eqref{eq:pdf_to_cdf}, $F_U(x)$ is found to be
+%\begin{align} 
+%F_{U}(x) = \int_{-\infty}^{x} f_{U}(x)\,dx
+%\label{eq:pdf_to_cdf}
+%\end{align}
+%For the uniform random variable $U$, $f_{U}(x)$ is given by  
+%\begin{align}
+%	f_U(x) &= 
+%	\begin{cases}
+%	1 &  0 \le x \le  1
+%	\\
+%	0 & elsewhere
+%	\\
+%	\end{cases}
+%	\label{eq:uni_pdf}
+%\end{align}
+%Substituting \eqref{eq:uni_pdf} in \eqref{eq:pdf_to_cdf}, $F_U(x)$ is found to be
 \begin{align}
 	F_U(x) &= 
 	\begin{cases}
@@ -73,7 +73,54 @@ and its variance as
 \end{equation}
 
 Write a C program to  find the mean and variance of $U$.\\
-\solution The following code prints the mean and variance of $U$
+\solution The code below is the function for calculating mean
+\begin{lstlisting}
+	double mean(char *str)
+{
+int i=0,c;
+FILE *fp;
+double x, temp=0.0;
+
+fp = fopen(str,"r");
+//get numbers from file
+while(fscanf(fp,"%lf",&x)!=EOF)
+{
+//Count numbers in file
+i=i+1;
+//Add all numbers in file
+temp = temp+x*x;
+}
+fclose(fp);
+temp = temp/(i-1);
+return temp;
+
+}
+\end{lstlisting}
+Function for calculating the mean
+\begin{lstlisting}
+double variance(char *str)
+{
+int i=0,c;
+FILE *fp;
+double x, sum_square=0.0, temp=0.0, var;
+
+fp = fopen(str,"r");
+//get numbers from file
+while(fscanf(fp,"%lf",&x)!=EOF)
+{
+//Count numbers in file
+i=i+1;
+//Add all numbers in file
+temp += x;
+sum_square += (x*x);
+}
+fclose(fp);
+var = (sum_square - temp*temp/(i-1))/(i-2);
+return var;
+
+}
+\end{lstlisting}
+The following code prints the mean and variance of $U$
 \begin{lstlisting}
 	chapter2/codes/mv.c
 \end{lstlisting}
@@ -89,21 +136,23 @@ Variance: 0.083301
 \begin{equation}
 E\sbrak{U^k} = \int_{-\infty}^{\infty}x^kdF_{U}(x)
 \end{equation}\\
-\solution For a random variable $X$, the mean $\mu_X$ and variance $\sigma_X^2$ are given by
+\solution For a random variable $X$, the mean $\mu_X$ is given by
 \begin{align}
 	\label{eq:mean_exp}
 	\mu_X &= E\sbrak{X} = \int_{-\infty}^{\infty}xdF_{U}(x) \\
 	\label{eq:var_exp}
 	\sigma_X^2 &= E\sbrak{X^2} - \mu_X^2 = \int_{-\infty}^{\infty}x^2dF_{U}(x) - \mu_X^2
-\end{align}  
+\end{align} 
+Variance $\sigma_X^2$ is given by
+ 
 Substituting the CDF of $U$ from (2.1.3.3) in (2.1.5.2) and (2.1.5.3), we get
-\begin{align}
+ \begin{align}
 	\label{eq:mean_uni}
-	\mu_U &= \frac{1}{2} \\
+	\textbf{Mean} & =\mu_U & = \frac{1}{2} & = 0.5 \\
 	\label{eq:var_uni}
-	\sigma_U^2 &= \frac{1}{12}
-\end{align}  
-which match with the values printed in problem 2.1.4
+	\textbf{Variance} & =\sigma_U^2 & = \frac{1}{12} & = 0.08
+\end{align} 
+Hence, the output values of program and theory are same.
 \end{enumerate}
 \section{Central Limit Theorem}
 \begin{enumerate}
@@ -116,7 +165,7 @@ X = \sum_{i=1}^{12}U_i -6
 %
 using a C program, where $U_i, i = 1,2,\dots, 12$ are  a set of independent uniform random variables between 0 and 1
 and save in a file called gau.dat\\
-\solution Download the following files and execute the  C program.
+\solution Use the following code and it will generate gau.dat file with the required Random variables the  C program.
 \begin{lstlisting}
 	chapter2/codes/rv.c
 \end{lstlisting}
@@ -126,12 +175,12 @@ Load gau.dat in python and plot the empirical CDF of $X$ using the samples in ga
 \\
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/gauss_cdf.png}
+\includegraphics[scale=0.8]{chapter2/figs/gauss_cdf.pdf}
 \caption{The CDF of $X$}
 \label{fig:gauss_cdf}
 \end{figure}
 Let $X$ be a random variable (either continuous or discrete), then the CDF
-of $X$ has the following properties
+of $X$ has the following properties \\
 The CDF is a non-decreasing \\
 The maximum of the CDF is when
 \begin{eqnarray}
@@ -140,6 +189,21 @@ x = \infty: F_X(\infty) = 1
 The minimum of the CDF is when
 \begin{eqnarray}
 x = -\infty: F_X(-\infty) = 0	
+\end{eqnarray} 
+If the CDF $F_X$ is continuous at any
+$a \le x \le b$, then
+\begin{eqnarray}
+\Pr \lsbrak a \le X \le \rsbrak b  = F_X (b) - F_X (a)
+\end{eqnarray}
+For any random variable X (discrete or continuous), $P[X = b]$ is
+\begin{eqnarray}
+\Pr \lsbrak X = \rsbrak b = 
+\begin{cases}
+	F_X (b) - F_X (b-) & \text{if $F_X$ is discontinuous at x = b}
+	\\	
+	0 & otherwise
+	\\
+	\end{cases}
 \end{eqnarray}
 \item
 Load gau.dat in python and plot the empirical PDF of $X$ using the samples in gau.dat. The PDF of $X$ is defined as
@@ -155,7 +219,7 @@ What properties does the PDF have?
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/gauss_pdf.pdf}
+\includegraphics[scale=0.8]{chapter2/figs/gauss_pdf.pdf}
 \caption{The PDF of $X$}
 \label{fig:gauss_pdf}
 \end{figure}
@@ -183,24 +247,25 @@ p_{X}(x) = \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}}, -\infty < x < \infty,
 \label{eq:gau_pdf}
 \end{align}
 repeat the above exercise theoretically.\\
-\solution Substituting the PDF from \eqref{eq:gau_pdf} in \eqref{eq:mean_exp},
+\solution The mean of gievn PDF is given by $E\sbrak{X}$ ,
 \begin{flalign}
-	\mu_X &= \int_{-\infty}^{\infty} \frac{x}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} \,dx&\\
-	\intertext{Using}&\\
-	\int x \cdot \exp \left( -a x^2 \right) \mathrm{d}x &= -\frac{1}{2a} \cdot \exp \left( -a x^2 \right)&\\
-	\mu_X &= \frac{1}{\sqrt{2\pi}}\left[-\exp\brak{-\frac{x^2}{2}}\right]_{-\infty}^{\infty}&\\  
+	E\sbrak{X} = \mu_X &= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} \,dx&\\
+     = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x e^{-\frac{x^2}{2}}dx\\
+    &=0 & \\ 
 	\mu_X &= 0
 \end{flalign}
-Substituting $\mu_X$ and the PDF in \eqref{eq:var_exp} to compute variance,
+Variance is given by
+\begin{align}
+    \sigma^2 =  E\brak X^2 - E^2\brak X 
+\end{align}
+Substituting $\mu_X$ and the PDF
 \begin{flalign}
-	\sigma_X^2 &= \int_{-\infty}^{\infty} \frac{x^2}{\sqrt{2\pi}}\exp\brak{-\frac{x^2}{2}} \,dx&\\ \nonumber
-	\intertext{Substituting} t &= \frac{x^2}{2},&\\	
-	\sigma_X^2 &= \frac{2}{\sqrt{\pi}} \int_{0}^{\infty} t^{\frac{1}{2}}\exp\brak{-t} \,dt&\\	\nonumber
-	&= \frac{2}{\sqrt{\pi}} \int_{0}^{\infty} t^{\frac{3}{2}-1}\exp\brak{-t} \,dt&\\
-	\intertext{Using the gamma function} \Gamma(x) &= \int_{0}^{\infty} z^{x-1} \cdot e^{-z} \, \mathrm{d}z \,&\\
-	\sigma_X^2 &= \frac{2}{\sqrt{\pi}}\Gamma(\frac{3}{2})&\\	\nonumber
-	&= \frac{2}{\sqrt{\pi}}\frac{\sqrt{\pi}}{2}&\\	\nonumber
-	&=1	
+	 &= \frac{2}{\sqrt{2\pi}} \int_{0}^{\infty} x^2 e^{-\frac{x^2}{2}} dx\\
+    &= \frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}\sqrt{2u}e^{-u} du \quad\brak{Let \frac{x^2}{2}= u}\\
+    &= \frac{2}{\sqrt{\pi}} \int_{0}^{\infty} e^{-u} u^{\frac{3}{2}-1} du \quad\brak{Let \Gamma\brak{\frac{1}{2}}=\sqrt{\pi}}\\
+    &= \frac{2}{\sqrt{\pi}} \Gamma\brak{{\frac{3}{2}}}\\
+    &= \frac{1}{\sqrt{\pi}}\Gamma\brak{\frac{1}{2}} \\
+    &= 1
 \end{flalign}
 %
 \end{enumerate}
@@ -223,7 +288,7 @@ and plot its CDF. \\
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/log.pdf}
+\includegraphics[scale = 0.7]{chapter2/figs/log.pdf}
 \caption{The CDF of $V$}
 \label{fig:log_uni_cdf}
 \end{figure}

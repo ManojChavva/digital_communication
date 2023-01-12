@@ -1,8 +1,6 @@
-%\documentclass[journal,10pt,twocolumn]{IEEEtran}
 \documentclass[11pt]{book}
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{setspace}
 \usepackage{gensymb}
 \singlespacing
@@ -22,9 +20,9 @@
 \usepackage{listings}
 \usepackage{mathtools}
 \usepackage{fancyvrb}
-%\usepackage{hyperref}
 \usepackage{titlesec}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries\centering}{\centering\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter} 
@@ -33,21 +31,15 @@
 \counterwithin{enumi}{section}
 \counterwithin{equation}{enumi}
 \counterwithin{figure}{enumi}
-%
-%\renewcommand\thesection{\theChapcounter.\arabic{section}}
-%\renewcommand\thesectiondis{\theChapcounter.\arabic{section}}
 \newcommand\figref{Fig.~\ref}
-
 \setenumerate{label=\thesection.\arabic*}
-
 \lstset{
-  basicstyle=\rmfamily,
+  basicstyle=\ttfamily,
   columns=fullflexible,
   frame=single,
   breaklines=true,
   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
 }
-
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -78,15 +70,15 @@
 \newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
 \newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
 \newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
-
 \let\vec\mathbf
-
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
