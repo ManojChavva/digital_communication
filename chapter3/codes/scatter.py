@@ -1,38 +1,37 @@
-import numpy as np
-import scipy.special as sp
 import matplotlib.pyplot as plt
-
-#if using termux
-#import subprocess
-#import shlex
-#end if
-A = 5
+import numpy as np
+import subprocess
+import shlex
+mean = [0, 0]
+cov = [[1, 0], [0, 1]]  # diagonal covariance
+A = 3
 A1=10**(0.1*A);
 simlen = int(100)
-n= np.random.normal(0, 1, simlen)
+n12, n2 = np.random.multivariate_normal(mean, cov, simlen).T
 values = [-1, 1]
 probabilities = [0.5, 0.5]
 X=np.random.choice(values, simlen, p=probabilities)
-y_var = A1*X + n
+y_var = A*X + n12
+y1=[]
+y2=[]
+for i in range(0,len(y_var)):
+    if (y_var[i]>0):
+        y1.append(y_var[i])
 
-x0 = np.extract(X==1, X)
-x1 = np.extract(X==-1, X)
-n0 = np.extract(X==1, n)
-n1 = np.extract	(X==-1, n)
-y0 = A1*x0 + n0
-y1 = A1*x1 + n1
+for i in range(0,len(y_var)):
+    if (y_var[i]<0):
+        y2.append(y_var[i])
+print(len(y1))
 
-plt.scatter(np.arange(y0.shape[0]),y0)
-plt.scatter(np.arange(y1.shape[0]),y1)
-#plt.plot(np.zeros(y0.shape[0]),y0, 'o', mfc='none')
-#plt.plot(np.zeros(y1.shape[0]),y1, 'o', mfc='none')
-plt.plot(np.linspace(-10, 60, 10),np.zeros(10), color='black')
+x=np.linspace(-20,100,len(y1))
+x1=np.linspace(-20,100,len(y2))
+plt.scatter(x,y1,color=['grey'])
+plt.scatter(x1,y2,color=['brown'])
+
+
 plt.grid()
-plt.legend(["$y|0$","$y|1$"])
+plt.xlabel("$x$")
+plt.ylabel("$y$")
+plt.legend(["y1","y0"])
 plt.savefig('../figs/bpsk_scatter.pdf')
-plt.savefig('../figs/bpsk_scatter.png')
-
-#if using termux
-#subprocess.run(shlex.split("termux-open ../../figs/ch3/bpsk_scatter.pdf"))
-#else
-plt.show() #opening the plot window
+plt.show()

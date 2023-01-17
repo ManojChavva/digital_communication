@@ -2,13 +2,13 @@
 \contentsline {section}{\numberline {1.1}Sum of Independant Random Variables}{1}{}%
 \contentsline {chapter}{\numberline {2}Random Numbers}{4}{}%
 \contentsline {section}{\numberline {2.1}Uniform Random Numbers}{4}{}%
-\contentsline {section}{\numberline {2.2}Central Limit Theorem}{6}{}%
+\contentsline {section}{\numberline {2.2}Central Limit Theorem}{7}{}%
 \contentsline {section}{\numberline {2.3}From Uniform to Other}{9}{}%
 \contentsline {section}{\numberline {2.4}Triangular Distribution}{10}{}%
-\contentsline {chapter}{\numberline {3}Maximum Likelihood Detection: BPSK}{14}{}%
-\contentsline {section}{\numberline {3.1}Maximum Likelihood}{14}{}%
-\contentsline {chapter}{\numberline {4}Transformation of Random Variables}{21}{}%
-\contentsline {section}{\numberline {4.1}Gaussian to Other}{21}{}%
-\contentsline {section}{\numberline {4.2}Conditional Probability}{26}{}%
-\contentsline {chapter}{\numberline {5}Bivariate Random Variables: FSK}{29}{}%
-\contentsline {section}{\numberline {5.1}Two Dimensions}{29}{}%
+\contentsline {chapter}{\numberline {3}Maximum Likelihood Detection: BPSK}{13}{}%
+\contentsline {section}{\numberline {3.1}Maximum Likelihood}{13}{}%
+\contentsline {chapter}{\numberline {4}Transformation of Random Variables}{18}{}%
+\contentsline {section}{\numberline {4.1}Gaussian to Other}{18}{}%
+\contentsline {section}{\numberline {4.2}Conditional Probability}{21}{}%
+\contentsline {chapter}{\numberline {5}Bivariate Random Variables: FSK}{24}{}%
+\contentsline {section}{\numberline {5.1}Two Dimensions}{24}{}%

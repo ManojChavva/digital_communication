@@ -6,19 +6,20 @@ Let $X_1 \sim  \gauss{0}{1}$ and $X_2 \sim  \gauss{0}{1}$. Plot the CDF and PDF 
 \begin{equation}
 V = X_1^2 + X_2^2
 \end{equation}\\
-\solution The CDF and PDF of $V$ are plotted in \figref{fig:chisq_cdf} and \figref{fig:chisq_pdf} respectively using the below code
+\solution Refer The CDF and PDF of $V$ plots in \figref{fig:chisq_cdf} and \figref{fig:chisq_pdf} 
 \begin{lstlisting}
 	chapter4/codes/sos.py
+	chapter4/codes/sos1.py
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter4/figs/chisq_cdf.pdf}
+\includegraphics[scale=0.8]{chapter4/figs/chisq_cdf.pdf}
 \caption{CDF of $V$}
 \label{fig:chisq_cdf}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter4/figs/chisq_pdf.pdf}
+\includegraphics[scale=0.8]{chapter4/figs/chisq_pdf.pdf}
 \caption{PDF of $V$}
 \label{fig:chisq_pdf}
 \end{figure}
@@ -39,47 +40,19 @@ F_{V}(x) =
 \end{equation}
 %
 find $\alpha$.\\
-\solution Let $Z=X^2$ where $X \sim \gauss{0}{1}$. Defining the CDF for $Z$,
-\begin{flalign*}
-	P_Z(z) &= \pr{Z < z}&\\
-	&= \pr{X^2 < z}&\\
-	&= \pr{-\sqrt{z} < X < \sqrt{z}}&\\
-	&= \int_{-\sqrt{z}}^{\sqrt{z}} p_X(x)  \,dx 
-\end{flalign*}
-Using \eqref{eq:cdf_to_pdf}, the PDF of $Z$ is given by
-\begin{align}
-	\nonumber
-	\frac{d}{dz}P_Z(z) &= p_Z(z)\\
-	\label{eq:square_pdf_gen}
-	= \frac{p_X(\sqrt{z})+p_X(-\sqrt{z})}{2\sqrt{z}} & \text{ (Using Lebniz's rule)} 
-\end{align}
-Substituting the standard gaussian density function $p_X(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$ in \eqref{eq:square_pdf_gen},
-\begin{equation}
-	p_Z(z) =
-	\begin{cases}
-	\frac{1}{\sqrt{2\pi z}}e^{-\frac{z}{2}} & z \ge 0\\
-	0 & z < 0
-	\end{cases} 
-	\label{eq:chisq_pdf}
-\end{equation}
-The PDF of $X_1^2$ and $X_2^2$ are given by \eqref{eq:chisq_pdf}. Since $V$ is the sum of two independant random variables,
-\begin{flalign*}
-	p_V(v) &= p_{X_1^2}(x_1) \ast p_{X_2^2}(x_2)&\\
-	&= \frac{1}{2\pi} \int_{0}^{v} \frac{e^{-\frac{x}{2}}}{\sqrt{x}}\frac{e^{-\frac{v-x}{2}}}{\sqrt{v-x}}  \,dx&\\
-	&= \frac{e^{-\frac{v}{2}}}{2\pi} \int_{0}^{v} \frac{1}{\sqrt{x(v-x)}}  \,dx&\\
-	&= \frac{e^{-\frac{v}{2}}}{2\pi} \sbrak{-\arcsin\left(\dfrac{v-2x}{v}\right)}_0^v&\\
-	&= \frac{e^{-\frac{v}{2}}}{2\pi} \pi&\\
-	&= \frac{e^{-\frac{v}{2}}}{2} \text{ for } v \ge 0
-\end{flalign*}
-$F_V(v)$ can be obtained from $p_V(v)$ using \eqref{eq:pdf_to_cdf}
-\begin{flalign}
-	\nonumber
-	F_V(v) &= \frac{1}{2} \int_{0}^{v} \exp\left(-\frac{v}{2}\right)&\\
-	\label{eq:chisq2_cdf}
-	&= 1-\exp\left(-\frac{v}{2}\right) \text{ for } v \ge 0
-\end{flalign}
-Comparing \eqref{eq:chisq2_cdf} with \eqref{eq:chisq2_cdf_gen}, $\alpha = \frac{1}{2}$ 
+\solution 
 %
+\begin{lstlisting}
+	chapter4/codes/cdf6.py
+\end{lstlisting}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{chapter4/figs/cdf6.pdf}
+\caption{The CDF of $V$ for different alpha}
+\label{fig:gauss_cdf_alpha}
+\end{figure}
+from \ref{fig:gauss_cdf_alpha}
+$alpha$= 0.5
 \item
 \label{ch3_raleigh_sim}
 Plot the CDF and PDF of
@@ -102,16 +75,17 @@ Using \eqref{eq:cdf_to_pdf}, the PDF is found to be
 \end{align}
 \begin{lstlisting}
 	chapter4/codes/cpdf.py
+	chapter4/codes/cpdf1.py
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter4/figs/rayleigh_cdf.pdf}
+\includegraphics[scale = 0.8]{chapter4/figs/rayleigh_cdf.pdf}
 \caption{CDF of $A$}
 \label{fig:rayleigh_cdf}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter4/figs/rayleigh_cdf.pdf}
+\includegraphics[scale=0.8]{chapter4/figs/rayleigh_pdf.pdf}
 \caption{PDF of $A$}
 \label{fig:rayleigh_pdf}
 \end{figure}
@@ -132,45 +106,57 @@ for
 Y = AX+N,
 \end{equation}
 where $A$ is Raleigh with $E\sbrak{A^2} = \gamma, N \sim \gauss{0}{1}, X \in \brak{-1,1}$ for $0 \le \gamma \le 10$ dB.\\
-\solution The red dots in \figref{fig:bpsk_pe_snr_rayleigh} is the required plot. The below code is used to generate the plot,
+\solution Refer \figref{fig:bpsk_pe_snr_rayleigh} 
 \begin{lstlisting}
 	chapter4/codes/cp.py
 \end{lstlisting}
 %
 \item
 Assuming that $N$ is a constant, find an expression for $P_e$.  Call this $P_e(N)$\\
-\solution Assuming the decision rule in \eqref{eq:bpsk_decision}, when $N$ is constant, $P_e$ is given by 
-\begin{flalign}
-	\nonumber
-	P_e &= \pr{\hat{X} = -1|X=1}&\\ \nonumber
-	&= \pr{Y<0|X=1}&\\ \nonumber
-	&= \pr{AX+N<0|X=1}&\\ 
-	\label{eq:prob_err_rayleigh_gen}
-	&= \pr{A+N<0}&\\ \nonumber
-	&= \pr{A<-N}&\\
-	\label{eq:prob_err_bpsk_rayleigh_cdf}
-	&=
-	\begin{cases}
-	F_A(-N) & N \ge 0\\
-	0 & N < 0
-	\end{cases}
-\end{flalign}
-For a Rayleigh random variable $X$ with $E\sbrak{X^2} = \gamma$, the PDF and CDF are given by
+\solution \solution The estimated value $\hat{X}$ is given by
 \begin{align}
-	\label{eq:rayleigh_pdf}
-	p_X(x) &= \frac{2x}{\gamma}\exp\left(-\frac{x^2}{\gamma}\right) \text{ for } x \ge 0\\
-	\label{eq:rayleigh_cdf}
-	F_X(X) &= 1-\exp\left(-\frac{x^2}{\gamma}\right) \text{ for } x \ge 0
+\hat{X} = 
+\begin{cases}
++1 & Y>0\\
+-1 & Y<0
+\end{cases}
 \end{align}
-Substituting \eqref{eq:rayleigh_cdf} in \eqref{eq:prob_err_bpsk_rayleigh_cdf},
-\begin{equation}
-	\label{eq:prob_err_bpsk_rayleigh_fN}
-	P_e(N) =
-	\begin{cases} 
-	1-\exp\left(-\frac{N^2}{\gamma}\right) & N \ge 0\\
-	0 & N < 0
-	\end{cases}
-\end{equation}
+For $X = 1$, 
+\begin{align}
+Y &= A + N\\
+P_e &= \pr{\hat{X} = -1|X=1} \\
+&= \pr{Y<0 |X=1}\\
+&= \pr{A<-N}\\
+&= F_A(-N)\\
+&= \int_{-\infty}^{-N} f_A(x)dx
+\end{align}
+By definition
+\begin{align}
+f_A(x) = 
+\begin{cases}
+\frac{x}{\sigma^2}\exp\brak{{-\frac{x^2}{2\sigma^2}}} & x\geq0\\
+0 & otherwise
+\end{cases}
+\end{align}
+If $N>0, f_A(x) = 0$. Then,
+\begin{align}
+ P_e=0  
+\end{align}
+If $N<0$. Then,
+\begin{align}
+ P_e(N) &=\int_{-\infty}^{-N} f_A(x)dx\\
+ &=\int_{-\infty}^{0} 0dx+\int_{0}^{-N} f_A(x)dx\\
+ &=\int_{0}^{-N} \frac{x}{\sigma^2}\exp\brak{{-\frac{x^2}{2\sigma^2}}}dx\\
+ &=1-\exp{\brak{-\frac{N^2}{2\sigma^2}}}
+\end{align}
+Therefore,
+\begin{align}\label{pe(N)}
+P_e(N) = 
+\begin{cases}
+1-\exp\brak{{-\frac{N^2}{2\sigma^2}}} & N<0\\
+0 & otherwise
+\end{cases}
+\end{align}
 %
 \item
 %
@@ -181,18 +167,40 @@ E\sbrak{g(X)} = \int_{-\infty}^{\infty}g(x)p_{X}(x)\, dx
 \end{equation}
 %
 Find $P_e = E\sbrak{P_e(N)}$.\\
-\solution Using $P_e(N)$ from \eqref{eq:prob_err_bpsk_rayleigh_fN},
-\begin{flalign*}
-	P_e &= \int_{-\infty}^{\infty} P_e(x)p_N(x) \,dx&\\
-	&= \int_{0}^{\infty} \left(1-e^{-\frac{x^2}{\gamma}}\right)\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} \,dx
-\end{flalign*}
-	
-\begin{multline*}
-	P_e = \frac{1}{\sqrt{2\pi}}\int_{0}^{\infty} e^{-\frac{x^2}{2}}  \,dx \\ - \frac{1}{\sqrt{2\pi}}\int_{0}^{\infty} \exp\left(-x^2\left(\frac{1}{\gamma}+\frac{1}{2}\right)\right)  \,dx
-\end{multline*}
-\begin{flalign*}
-	P_e &= \frac{1}{2} - \frac{1}{2}\sqrt{\frac{\gamma}{2+\gamma}}
-\end{flalign*} 
+\solution Since $N \sim \gauss{0}{1}$ ,
+\begin{align}
+  p_N(x)= \frac{1}{\sqrt{2\pi}}\exp \brak{-\frac{x^2}{2} }
+\end{align}
+And from \eqref{pe(N)} 
+\begin{align}
+    P_e(x)=
+    \begin{cases}
+1-\exp\brak{{-\frac{x^2}{2\sigma^2}}} & x<0\\
+0 & otherwise
+\end{cases}
+\end{align}
+
+\begin{align}
+ P_e=E\sbrak{P_e(N)} = \int_{-\infty}^{\infty}P_e(x)p_{N}(x)\, dx  
+\end{align}
+If $x<0, P_e(x)=0$ and using the fact that for an even function
+\begin{align}
+\int_{-\infty}^{\infty}f(x)=2\int_{-\infty}^{0}f(x)   
+\end{align}
+we get
+\begin{align}
+  P_e&= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{0}\exp \brak{ -\frac{x^2}{2}} \brak{1-\exp \brak{ -\frac{x^2}{2\sigma^2}} } dx\\
+&= \frac{1}{2\sqrt{2\pi}} \int_{-\infty}^{\infty} \exp \brak{ -\frac{x^2}{2} }dx \nonumber \\
+&- \frac{1}{2\sqrt{2\pi}} \int_{-\infty}^{\infty} \exp \brak{-\frac{(1+ \sigma^2)x^2}{2 \sigma^2}}  dx\\
+&= \frac{\sqrt{2\pi} - \sqrt{\frac{\pi(2\sigma^2)}{1+\sigma^2}}}{2\sqrt{2\pi}}\\
+&= \frac{1}{2} - \frac{1}{2}\sqrt{\frac{\sigma^2}{1+\sigma^2}}
+\end{align}
+For a Rayleigh Distribution with scale $= \sigma$,
+\begin{align}
+E\sbrak{A^2} = 2\sigma^2\\
+\gamma = 2\sigma^2\\
+\therefore P_e = \frac{1}{2} - \frac{1}{2}\sqrt{\frac{\gamma}{2+\gamma}}
+\end{align}
 %
 \item
 Plot $P_e$ in problems \ref{ch4_sim} and \ref{ch4_anal} on the same graph w.r.t $\gamma$.  Comment.\\
@@ -200,16 +208,8 @@ Plot $P_e$ in problems \ref{ch4_sim} and \ref{ch4_anal} on the same graph w.r.t 
 gain $A$ is Rayleigh distributed than the case where $A$ is a constant (compare with \figref{fig:bpsk_pe_snr}).
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter4/figs/prob_error.pdf}
+\includegraphics[scale=0.8]{chapter4/figs/prob_error.pdf}
 \caption{$P_e$ versus $\gamma$}
 \label{fig:bpsk_pe_snr_rayleigh}
 \end{figure}
-From \eqref{eq:prob_err_rayleigh_gen}, $P_e$ is given by
-\begin{equation}
-	P_e = \pr{A+N<0}
-\end{equation}
-One method of computing \eqref{eq:prob_err_rayleigh_gen} is by finding the PDF of $Z=A+N$ (as the convolution of the individual PDFs of %
-$A$ and $N$) and then integrating $p_Z(z)$ from $-\infty$ to $0$. The other method is by first computing $P_e$ for constant $N$ and then finding %
-the expectation of $P_e(N)$. Both provide the same result but the computation of integrals is simpler when using the latter method. 
-
 \end{enumerate}

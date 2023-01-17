@@ -145,12 +145,19 @@ E\sbrak{U^k} = \int_{-\infty}^{\infty}x^kdF_{U}(x)
 \end{align} 
 Variance $\sigma_X^2$ is given by
  
-Substituting the CDF of $U$ from (2.1.3.3) in (2.1.5.2) and (2.1.5.3), we get
+Substituting the CDF of $U$ from (2.1.3.3) in (2.1.5.2) and (2.1.5.3), we get \\
  \begin{align}
 	\label{eq:mean_uni}
-	\textbf{Mean} & =\mu_U & = \frac{1}{2} & = 0.5 \\
+	\textbf{Mean} & =\mu_U & \\
+ \mathrm{E}[X]=\int_a^b x \cdot \frac{1}{b-a} d x
+ \\ Here \  a=0,b=1
+ \\ \mu= \mathrm{E}[X]= \frac{1}{2} = 0.5	\\
 	\label{eq:var_uni}
-	\textbf{Variance} & =\sigma_U^2 & = \frac{1}{12} & = 0.08
+	\mathrm{E}[X^2]=\int_a^b x^2 \cdot \frac{1}{b-a} d x=\frac{b^3-a^3}{3} \cdot \frac{1}{b-a} \\
+ \text{Variance} \\
+ \sigma^2=E\left(X^2\right)-[E(X)]^2
+ =\frac{(a-b)^2}{12}\\
+  \sigma^2 = \frac{1}{12} & = 0.08
 \end{align} 
 Hence, the output values of program and theory are same.
 \end{enumerate}
@@ -230,7 +237,7 @@ The properties of PDF are
 	\int_{-\infty}^{\infty} f_X(x) \,dx = 1
 \end{eqnarray}
 
-\item Find the mean and variance of $X$ by writing a C program.
+\item Find the mean and variance of $X$ by writing a C program.  \\
 \solution The following code prints the mean and variance of $X$
 \begin{lstlisting}
 	chapter2/codes/mean.c
@@ -260,7 +267,7 @@ Variance is given by
 \end{align}
 Substituting $\mu_X$ and the PDF
 \begin{flalign}
-	 &= \frac{2}{\sqrt{2\pi}} \int_{0}^{\infty} x^2 e^{-\frac{x^2}{2}} dx\\
+	 &= \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} x^2 e^{-\frac{x^2}{2}} dx\\
     &= \frac{2}{\sqrt{2\pi}}\int_{0}^{\infty}\sqrt{2u}e^{-u} du \quad\brak{Let \frac{x^2}{2}= u}\\
     &= \frac{2}{\sqrt{\pi}} \int_{0}^{\infty} e^{-u} u^{\frac{3}{2}-1} du \quad\brak{Let \Gamma\brak{\frac{1}{2}}=\sqrt{\pi}}\\
     &= \frac{2}{\sqrt{\pi}} \Gamma\brak{{\frac{3}{2}}}\\
@@ -294,21 +301,41 @@ and plot its CDF. \\
 \end{figure}
 \item Find a theoretical expression for $F_V(x)$.
 \begin{flalign}
-	F_V(x) &= P(V < x)&\\
-	&= P(-2\ln\brak{1-U} < x)&\\
-	&= P(U < 1 - e^{\frac{-x}{2}})&\\
+	F_V(x) &= P(V \le x)&\\
+	&= P(-2\ln\brak{1-U} \le x)&\\
+	&= P(U \le 1 - e^{\frac{-x}{2}})&\\
 	&= F_U(1 - e^{\frac{-x}{2}})
+	\label{eq:probman_cdf_V_temp}
 \end{flalign}
-Using $F_U(x)$ defined in \eqref{eq:uni_cdf},
 \begin{align}
-	F_V(x) &=
-	\begin{cases}
-		0 & x < 0\\
-		1 - e^{\frac{-x}{2}} & x \ge 0
-	\end{cases}
-\end{align} 
+F_U(x) = 
+\begin{cases}
+0 &  x < 0 \\
+x & 0 \le x \le 1 \\
+1 & x > 1
+\end{cases}
+\end{align}
+%
+Substituting the above in \eqref{eq:probman_cdf_V_temp},
+%
+\begin{align}
+F_U\brak{1- e^{-\frac{x}{2}}} =
+\begin{cases}
+0 &  1- e^{-\frac{x}{2}} < 0 \\
+1- e^{-\frac{x}{2}} & 0 \le 1- e^{-\frac{x}{2}} \le 1 \\
+1 & 1- e^{-\frac{x}{2}} > 1
+\end{cases}
+\end{align}
+After some algebra, the above conditions yield
+\begin{align}
+F_V(x) = 
+\begin{cases}
+0 & x < 0 \\
+1- e^{-\frac{x}{2}} & x \ge 0
+\end{cases}
+\label{eq:probman_V_cdf_anal}
+\end{align}
 \end{enumerate}
-
 
 
 \section{Triangular Distribution}
@@ -329,7 +356,7 @@ chapter2/codes/tri.c
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/triangle_cdf.pdf}
+\includegraphics[scale=0.8]{chapter2/figs/triangle_cdf.pdf}
 \caption{The CDF of $T$}
 \label{fig:tri_cdf}
 \end{figure}
@@ -340,36 +367,37 @@ chapter2/codes/tdpf.py
 \end{lstlisting}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{chapter2/figs/triangle_pdf.pdf}
+\includegraphics[scale=0.8]{chapter2/figs/triangle_pdf.pdf}
 \caption{The PDF of $T$}
 \label{fig:tri_pdf}
 \end{figure}
 \item Find the theoretical expressions for the PDF and CDF of $T$.\\
-\solution Since $T$ is the sum of two independant random variables $U1$ and $U2$, the PDF of $T$ is given by
-\begin{flalign}
-	p_T(x) &= p_{U1}(x) \ast p_{U2}(x)
-\end{flalign}
-Using the PDF of $U$ from \eqref{eq:uni_pdf}, the convolution results in
+\solution 
+
+CDF $F_U(x)$ is
 \begin{align}
-	p_T(x) &=
-	\begin{cases}
-		0 & x < 0\\
-		x & 0 \le x \le 1\\
-		2-x & 1 \le x \le 2\\
-		0 & x > 2
-	\end{cases}
-	\label{eq:tri_pdf}
+F_{T}(x) &= 
+\begin{cases}
+0 & x \leq a \\
+\frac{(x-a)^2}{(b-a)(c-a)} & a < x \leq c \\
+1-\frac{(b-x)^2}{(b-a)(c-a)} & c < x \leq b\\
+1 & x > b
+\end{cases}
 \end{align}
-The CDF of $T$ is found using \eqref{eq:pdf_to_cdf} by replacing $U$ with $T$. Evaluating the integral for the piecewise function $p_T(x)$, 
+PDF $p_T(x)$
 \begin{align}
-	F_T(x) &=
-	\begin{cases}
-		0 & x < 0\\
-		\frac{x^2}{2} & 0 \le x \le 1\\
-		2x-\frac{x^2}{2}-1 & 1 \le x \le 2\\
-		1 & x > 2
-	\end{cases}
+p_{T}(x) = \frac{d}{dx}F_{T}(x)
 \end{align}
+\begin{align}
+p_{T}(x) &= 
+\begin{cases}
+0 & x \leq a \\
+\frac{2(x-a)}{(b-a)(c-a)} & a < x \leq c \\
+\frac{2(b-x)}{(b-a)(c-a)} & c < x \leq b\\
+0 & x > b
+\end{cases}
+\end{align}
+
 \item Verify your results through a plot. \\
-\solution The theoretical and numerical plots for the CDF and PDF of $T$ closely match in \figref{fig:tri_cdf} and \figref{fig:tri_pdf}
+\solution Refer the \figref{fig:tri_cdf} and \figref{fig:tri_pdf}
 \end{enumerate}

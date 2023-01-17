@@ -1,26 +1,21 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.special as sp
 
-rng = np.random.default_rng()
-
-A = 4
+x = np.linspace(-5,12,100)
+samples=150
+A = 10
+y=x
 s0 = np.array([1,0]).reshape(2,1)
 s1 = np.array([0,1]).reshape(2,1)
-
-num_samples = 1000
-N_var = rng.normal(size=(2, num_samples))
-
-y_s0 = A*s0 + N_var
-y_s1 = A*s1 + N_var
-
-# Condition is x^ = s0 if y>x, x^ = s1 if y<x
-plt.scatter(y_s0[0], y_s0[1])
-plt.scatter(y_s1[0], y_s1[1])
-plt.plot(np.linspace(-1, A+1, 100), np.linspace(-1, A+1, 100), color='red')
+N = np.random.normal(size=(2,samples))
+y_s0 =A*s0+N
+y_s1 = A*s1+N
+plt.scatter(y_s0[0],y_s0[1],color=['blue'])
+plt.scatter(y_s1[0],y_s1[1], color =['brown'])
+plt.plot(x,y)
 plt.xlabel('x')
 plt.ylabel('y')
-plt.legend(["$y|s_0$","$y|s_1$"])
 plt.grid()
 
 plt.savefig('../figs/biv_scatter.pdf')
