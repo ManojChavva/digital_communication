@@ -73,53 +73,53 @@ and its variance as
 \end{equation}
 
 Write a C program to  find the mean and variance of $U$.\\
-\solution The code below is the function for calculating mean
-\begin{lstlisting}
-	double mean(char *str)
-{
-int i=0,c;
-FILE *fp;
-double x, temp=0.0;
-
-fp = fopen(str,"r");
-//get numbers from file
-while(fscanf(fp,"%lf",&x)!=EOF)
-{
-//Count numbers in file
-i=i+1;
-//Add all numbers in file
-temp = temp+x*x;
-}
-fclose(fp);
-temp = temp/(i-1);
-return temp;
-
-}
-\end{lstlisting}
-Function for calculating the mean
-\begin{lstlisting}
-double variance(char *str)
-{
-int i=0,c;
-FILE *fp;
-double x, sum_square=0.0, temp=0.0, var;
-
-fp = fopen(str,"r");
-//get numbers from file
-while(fscanf(fp,"%lf",&x)!=EOF)
-{
-//Count numbers in file
-i=i+1;
-//Add all numbers in file
-temp += x;
-sum_square += (x*x);
-}
-fclose(fp);
-var = (sum_square - temp*temp/(i-1))/(i-2);
-return var;
-
-}
-\end{lstlisting}
+\solution 
+%\begin{lstlisting}
+%	double mean(char *str)
+%{
+%int i=0,c;
+%FILE *fp;
+%double x, temp=0.0;
+%
+%fp = fopen(str,"r");
+%//get numbers from file
+%while(fscanf(fp,"%lf",&x)!=EOF)
+%{
+%//Count numbers in file
+%i=i+1;
+%//Add all numbers in file
+%temp = temp+x*x;
+%}
+%fclose(fp);
+%temp = temp/(i-1);
+%return temp;
+%
+%}
+%\end{lstlisting}
+%Function for calculating the mean
+%\begin{lstlisting}
+%double variance(char *str)
+%{
+%int i=0,c;
+%FILE *fp;
+%double x, sum_square=0.0, temp=0.0, var;
+%
+%fp = fopen(str,"r");
+%//get numbers from file
+%while(fscanf(fp,"%lf",&x)!=EOF)
+%{
+%//Count numbers in file
+%i=i+1;
+%//Add all numbers in file
+%temp += x;
+%sum_square += (x*x);
+%}
+%fclose(fp);
+%var = (sum_square - temp*temp/(i-1))/(i-2);
+%return var;
+%
+%}
+%\end{lstlisting}
 The following code prints the mean and variance of $U$
 \begin{lstlisting}
 	chapter2/codes/mv.c

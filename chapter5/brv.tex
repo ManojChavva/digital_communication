@@ -102,8 +102,8 @@ For the above problem, find a decision rule for detecting the symbols $\mbf{s}_0
 
 \solution
 The real vector  \begin{align}
-s_0 =(s_1,\dots,s_n)^\top \\
-s_1 =(s_1,\dots,s_n)^\top \\
+s_0 =(s_{0|1},\dots,s_{0|n})^\top \\
+s_1 =(s_{1|1},\dots,s_{1|n})^\top \\
 \end{align}
 For the given $s_0$, $n_1,n_2 \sim \gauss{0}{1}$.
 \begin{align}
@@ -145,13 +145,30 @@ Substituting this in \eqref{eq:logr}, we get
 LLR(y)  = \sbrak{\frac{\brak{s_0 -s_1}^\top}{\sigma^2} \brak{y - \frac{s_0 + s_1}{2} }} \lesseqgtr_{H=0}^{H=1} \ln\frac{P_0}{P_1} = \ln\eta
 \label{final}
 \end{align}
+By equating,$s_0 =s_1$
+\begin{equation}
+p\brak{\vec{y}|s_0}=p\brak{\vec{y}|s_1}
+\label{eq:map_bfsk_dec1}
+\end{equation}
+\begin{align}
+\brak{\vec{y}-\vec{s}_0}^\top \brak{\vec{y}-\vec{s}_0} &= \brak{\vec{y}-\vec{s}_1}^\top \brak{\vec{y}-\vec{s}_1}\\
+\vec{y}^\top\vec{y} - 2\vec{s}_0^\top \vec{y} + \vec{s}_0^T\vec{s}_0 &= \vec{y}^\top\vec{y} - 2\vec{s}_1^\top \vec{y} + \vec{s}_1^T\vec{s}_1\\
+ 2\brak{\vec{s}_1-\vec{s}_0}^\top \vec{y} &= \norm{\vec{s}_1}^2 - \norm{\vec{s}_0}^2\\
+\brak{\vec{s}_1-\vec{s}_0}^\top \vec{y} &= 0\\
+\myvec{-1\\1}^\top \vec{y} &= 0
+\end{align}
+
 This decision regions are separated  by the affine space that forms the perpendicular section between $s_1$ and $s_0$. \\
 Finally, we use \ref{final} to evaluate 
-$\Pr(e | H =0)$. $E\
-sbrak{ Y -(s_0 +s_1)/2|H=0)} = \frac{s_1 -s_0}{2}$ So
+$\Pr(e | H =0)$. $E\sbrak{ Y -(s_0 +s_1)/2|H=0)} = \frac{s_1 -s_0}{2}$ So
 \begin{align}
 E\sbrak{LLR(Y)|H=0} = \frac{-\brak{s_0 -s_1}^T\brak{s_0 -s_1}}{2\sigma^2}
 \end{align}
+
+
+
+
+
 Defining $\gamma$ as
 \begin{align}
 \gamma = \frac{\norm{s_0 -s_1}}{\sigma}
