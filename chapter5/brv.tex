@@ -163,6 +163,7 @@ Finally, we use \ref{final} to evaluate
 $\Pr(e | H =0)$. $E\sbrak{ Y -(s_0 +s_1)/2|H=0)} = \frac{s_1 -s_0}{2}$ So
 \begin{align}
 E\sbrak{LLR(Y)|H=0} = \frac{-\brak{s_0 -s_1}^T\brak{s_0 -s_1}}{2\sigma^2}
+\label{lastqsn}
 \end{align}
 
 
@@ -171,7 +172,7 @@ E\sbrak{LLR(Y)|H=0} = \frac{-\brak{s_0 -s_1}^T\brak{s_0 -s_1}}{2\sigma^2}
 
 Defining $\gamma$ as
 \begin{align}
-\gamma = \frac{\norm{s_0 -s_1}}{\sigma}
+A = \gamma = \frac{\norm{s_0 -s_1}}{\sigma}
 \end{align}
 This simplifies to
 \begin{align}
@@ -207,25 +208,27 @@ chapter5/codes/biv_pe_snr.py
 %
 \item
 Obtain an expression for $P_e$. Verify this by comparing the theory and simulation plots on the same graph.\\
-\solution \begin{align}
-    P_e = \pr{\hat{\mbf{x}} = \mbf{s}_1|\mbf{x} = \mbf{s}_0}
-    \end{align}
-    Given that $\mbf{s}_0$ was transmitted, the received signal is
-    \begin{align}
-    \mbf{y}|\mbf{s}_0 = \begin{pmatrix} A \\ 0 \end{pmatrix} + \begin{pmatrix} n_1 \\ n_2 \end{pmatrix}
-    \end{align}
-    From decision rule, the probability of error is given by 
-    \begin{align}
-    P_e &= \pr{y_1 < y_2 |\mbf{s}_0} = \pr{A+n_1 < n_2}\\
-    &= \pr{n_2 - n_1 > A}
-    \end{align}
-    Note that $n_2 - n_1 \sim \gauss{0}{2}$. Thus,
-    \begin{align}
-    P_e &= \pr{\sqrt{2}w > A}\\
-    \pr{w > \dfrac{A}{\sqrt{2}}}\\
-    \Rightarrow P_e &= \qfunc{\frac{A}{\sqrt{2}}}
-    \end{align}
-    where $w \sim \gauss{0}{1}$. \\
+\solution 
+Refer from \figref{lastqsn} \\
+%\begin{align}
+%    P_e = \pr{\hat{\mbf{x}} = \mbf{s}_1|\mbf{x} = \mbf{s}_0}
+%    \end{align}
+%    Given that $\mbf{s}_0$ was transmitted, the received signal is
+%    \begin{align}
+%    \mbf{y}|\mbf{s}_0 = \begin{pmatrix} A \\ 0 \end{pmatrix} + \begin{pmatrix} n_1 \\ n_2 \end{pmatrix}
+%    \end{align}
+%    From decision rule, the probability of error is given by 
+%    \begin{align}
+%    P_e &= \pr{y_1 < y_2 |\mbf{s}_0} = \pr{A+n_1 < n_2}\\
+%    &= \pr{n_2 - n_1 > A}
+%    \end{align}
+%    Note that $n_2 - n_1 \sim \gauss{0}{2}$. Thus,
+%    \begin{align}
+%    P_e &= \pr{\sqrt{2}w > A}\\
+%    \pr{w > \dfrac{A}{\sqrt{2}}}\\
+%    \Rightarrow P_e &= \qfunc{\frac{A}{\sqrt{2}}}
+%    \end{align}
+%    where $w \sim \gauss{0}{1}$. \\
 \figref{fig:biv_pe_snr} compares the theoretical and simulation plots.
 
 \begin{figure}[H]
